@@ -1,6 +1,6 @@
 const categoriesList = document.querySelectorAll(".categories-item");
 const elementsOfCategory = document.querySelectorAll(
-  ".elements-list .elem-list-items"
+  ".elements-list > .elem-list-items"
 );
 
 console.log(`Number of categories: ${categoriesList.length}`);

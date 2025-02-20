@@ -28,10 +28,11 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  boxesContainer.innerHTML = "";
+  containerOfBoxes.innerHTML = "";
+  input.value = "";
 }
 
-createBtn.addEventListener("click", () => {
+createBtn.addEventListener("click", (event) => {
   const amount = Number(input.value);
   if (amount < 1 || amount > 100) {
     alert("Not valid number! Choose from 1 to 100.");

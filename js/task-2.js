@@ -27,17 +27,17 @@ const images = [
 
 function addImg(images) {
   const gallery = document.querySelector(".gallery");
-  for (const img of images) {
-    const tagLi = document.createElement("li");
-    const tagImg = document.createElement("img");
-    tagImg.setAttribute("src", img.url);
-    tagImg.setAttribute("alt", img.alt);
-    tagImg.setAttribute("width", "320");
-    tagImg.classList.add("image-js");
-    tagLi.classList.add("gallery-item-js");
-    tagLi.append(tagImg);
-    gallery.append(tagLi);
-  }
-  return gallery;
+
+  const markup = images
+    .map(
+      (img) =>
+        `<li class="gallery-item-js">
+          <img src="${img.url}" alt="${img.alt}" width="320" class="image-js">
+        </li>`
+    )
+    .join("");
+
+  gallery.insertAdjacentHTML("beforeend", markup);
 }
-console.log(addImg(images));
+
+addImg(images);

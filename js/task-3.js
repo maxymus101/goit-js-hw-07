@@ -5,6 +5,6 @@ yourName.addEventListener("input", (event) => {
   const trimmedValue = inputValue.trim();
 
   nameOut.textContent = trimmedValue
-    ? `Hello, ${trimmedValue}`
-    : "Hello, Anonymous";
+    ? (nameOut.textContent = trimmedValue)
+    : (nameOut.textContent = `Anonymus`);
 });
